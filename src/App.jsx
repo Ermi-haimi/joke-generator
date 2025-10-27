@@ -1,4 +1,4 @@
-import { useState, Fragment } from "react";
+import { useState } from "react";
 import axios from "axios";
 
 function App() {
@@ -21,22 +21,22 @@ function App() {
 
   return (
     <div className="flex flex-col h-screen">
-      <div className="bg-blue-400 p-2">
-        <h1 className="text-6xl text-white ">Laugh Infinnitely</h1>
-        <p className="text-4xl">presented by Ermais with Sv443</p>
+      <div className="bg-linear-to-r from-blue-400 to-cyan-200 p-2">
+        <h1 className="text-6xl text-white ">Smile Infinnitely</h1>
+        <p className="text-3xl text-blue-800">Presented by Ermais with Sv443</p>
       </div>
-      <div className="bg-green-600 flex-3 flex flex-col">
+      <div className="bg-blue-400 flex-3 flex flex-col">
         <div className="flex justify-center m-4 flex-col items-center">
           <button
             onClick={() => fetchJoke()}
-            className="bg-amber-300 p-2 w-fit "
+            className="bg-amber-300 p-2 w-fit text-blue-950 rounded-xl shadow-xl/30 active:shadow-2xl/30 "
           >
             Generate a joke
           </button>
           <div className="flex flex-col items-center">
-            <p className="">A joke by category</p>
+            <p className="font-bold p-3">A joke by category</p>
 
-            <div className="flex gap-2">
+            <div className="flex gap-2 *:bg-blue-300 *:text-blue-950 *:rounded-xl *:shadow-xl/30 *:active:shadow-2xl/30">
               <button
                 onClick={() => {
                   fetchJoke("Programming");
@@ -81,7 +81,9 @@ function App() {
           </div>
         </div>
 
-        <div>{joke}</div>
+        <div className="text-white font-bold text-2xl text-center flex justify-center">
+          <p className="w-2/3">{joke}</p>
+        </div>
       </div>
     </div>
   );
