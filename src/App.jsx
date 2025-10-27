@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
+import { FaGithub, FaLinkedin, FaTelegramPlane } from "react-icons/fa";
 
 function App() {
   const [joke, setJoke] = useState("");
@@ -25,21 +26,21 @@ function App() {
   return (
     <div className="flex flex-col h-screen">
       <div className="bg-linear-to-r from-blue-400 to-cyan-200 p-2">
-        <h1 className="text-6xl text-white ">Smile Infinnitely</h1>
-        <p className="text-3xl text-blue-800">Presented by Ermais with Sv443</p>
+        <h1 className="text-6xl text-white ">Smile Infinitely</h1>
+        <p className="text-2xl text-blue-800">Presented by Ermais with Sv443</p>
       </div>
       <div className="bg-blue-400 flex-3 flex flex-col">
         <div className="flex justify-center m-4 flex-col items-center">
           <button
             onClick={() => fetchJoke()}
-            className="bg-amber-300 p-2 w-fit text-blue-950 rounded-xl shadow-xl/30 active:shadow-2xl/30 "
+            className="bg-amber-300 p-2 w-fit text-blue-950 rounded-xl shadow-xl/30 active:shadow-2xl/30 hover:opacity-90 cursor-pointer "
           >
             Generate a joke
           </button>
           <div className="flex flex-col items-center">
             <p className="font-bold p-3">A joke by category</p>
 
-            <div className="flex gap-2 *:bg-blue-300 *:text-blue-950 *:rounded-xl *:shadow-xl/30 *:active:shadow-2xl/30">
+            <div className="flex gap-2 *:bg-blue-300 *:text-blue-950 *:rounded-xl *:shadow-xl/30 *:active:shadow-2xl/30 *:hover:opacity-90 *:cursor-pointer">
               <button
                 onClick={() => {
                   fetchJoke("Programming");
@@ -86,6 +87,20 @@ function App() {
 
         <div className="text-white font-bold text-2xl text-center flex justify-center">
           <p className="w-2/3">{joke}</p>
+        </div>
+      </div>
+      <div className="bg-linear-to-r from-blue-400 to-blue-300 p-5 text-white flex flex-col items-center">
+        <p>ermias haimanot</p>
+        <div className="flex gap-2">
+          <a href="https://github.com/Ermi-haimi" target="_blank">
+            <FaGithub className="text-black text-xl" />
+          </a>
+          <a href="https://www.linkedin.com/in/ermiashtsegaye/" target="_blank">
+            <FaLinkedin className="text-blue-600 text-xl" />
+          </a>
+          <a href="https://t.me/ermiasHT" target="_blank">
+            <FaTelegramPlane className="text-white text-xl" />
+          </a>
         </div>
       </div>
     </div>
