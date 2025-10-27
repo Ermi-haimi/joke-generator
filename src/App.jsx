@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import axios from "axios";
 
 function App() {
@@ -18,6 +18,9 @@ function App() {
       setJoke("😅 Oops! Failed to fetch a joke. Try again!");
     }
   }
+  useEffect(() => {
+    fetchJoke();
+  }, []);
 
   return (
     <div className="flex flex-col h-screen">
