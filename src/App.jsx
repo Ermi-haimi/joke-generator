@@ -40,7 +40,7 @@ function App() {
           <div className="flex flex-col items-center">
             <p className="font-bold p-3">A joke by category</p>
 
-            <div className="flex gap-2 *:bg-blue-300 *:text-blue-950 *:rounded-xl *:shadow-xl/30 *:active:shadow-2xl/30 *:hover:opacity-90 *:cursor-pointer">
+            <div className="flex flex-wrap justify-center gap-2 *:bg-blue-300 *:text-blue-950 *:rounded-xl *:shadow-xl/30 *:active:shadow-2xl/30 *:hover:opacity-90 *:cursor-pointer">
               <button
                 onClick={() => {
                   fetchJoke("Programming");
