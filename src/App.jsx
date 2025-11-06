@@ -4,16 +4,20 @@ import { FaGithub, FaLinkedin, FaTelegramPlane } from "react-icons/fa";
 
 function App() {
   const [joke, setJoke] = useState("");
+  const [previousJokes, setPreviousJokes] = useState([]);
+  const [index, setIndex] = useState(0);
 
-  async function fetchJoke(
-    // apiLink = "https://v2.jokeapi.dev/joke/Any?format=txt"
-    cat = "Any"
-  ) {
+  async function fetchJoke(cat = "Any") {
     try {
       let response = await axios.get(
         `https://v2.jokeapi.dev/joke/${cat}?format=txt`
       );
       setJoke(response.data);
+      let newJokes = previousJokes;
+      newJokes.push(response.data);
+      setPreviousJokes(newJokes);
+      console.log(previousJokes);
+      setIndex(previousJokes.length - 1);
     } catch (error) {
       console.error("Error fetching joke:", error);
       setJoke("😅 Oops! Failed to fetch a joke. Try again!");
@@ -23,6 +27,23 @@ function App() {
     fetchJoke();
   }, []);
 
+  function prevJoke() {
+    if ((previousJokes.length > 0) & (index >= 1)) {
+      setJoke(previousJokes[index - 1]);
+      setIndex(index - 1);
+    } else {
+      if (previousJokes.length === 0) {
+        setJoke("you haven't generate any joke");
+      } else {
+        setJoke(
+          <p className="text-amber-300">
+            You have seen all the jokes you generated, generate a new joke!
+          </p>
+        );
+      }
+    }
+  }
+
   return (
     <div className="flex flex-col h-screen">
       <div className="bg-linear-to-r from-blue-400 to-cyan-200 p-2">
@@ -31,12 +52,19 @@ function App() {
       </div>
       <div className="bg-blue-400 flex-3 flex flex-col">
         <div className="flex justify-center m-4 flex-col items-center">
-          <button
-            onClick={() => fetchJoke()}
-            className="bg-amber-300 p-2 w-fit text-blue-950 rounded-xl shadow-xl/30 active:shadow-2xl/30 hover:opacity-90 cursor-pointer "
-          >
-            Generate a joke
-          </button>
+          <div className="flex  gap-1 *:text-blue-950 *:rounded-xl *:p-2 *:shadow-xl/30 *:active:shadow-2xl/30 *:hover:opacity-90 *:cursor-pointer">
+            <button
+              className="bg-amber-200  "
+              onClick={() => {
+                prevJoke();
+              }}
+            >
+              Previous Joke
+            </button>
+            <button onClick={() => fetchJoke()} className="bg-amber-300 ">
+              Generate a new joke
+            </button>
+          </div>
           <div className="flex flex-col items-center">
             <p className="font-bold p-3">A joke by category</p>
 
@@ -45,7 +73,7 @@ function App() {
                 onClick={() => {
                   fetchJoke("Programming");
                 }}
-                className="bg-amber-300 p-2 w-fit "
+                className=" p-2 w-fit "
               >
                 Programming
               </button>
@@ -53,7 +81,7 @@ function App() {
                 onClick={() => {
                   fetchJoke("Dark");
                 }}
-                className="bg-amber-300 p-2 w-fit "
+                className=" p-2 w-fit "
               >
                 Dark
               </button>
@@ -61,7 +89,7 @@ function App() {
                 onClick={() => {
                   fetchJoke("Pun");
                 }}
-                className="bg-amber-300 p-2 w-fit "
+                className=" p-2 w-fit "
               >
                 Pun
               </button>
@@ -69,7 +97,7 @@ function App() {
                 onClick={() => {
                   fetchJoke("Spooky");
                 }}
-                className="bg-amber-300 p-2 w-fit "
+                className=" p-2 w-fit "
               >
                 Spooky
               </button>
@@ -77,7 +105,7 @@ function App() {
                 onClick={() => {
                   fetchJoke("Christmas");
                 }}
-                className="bg-amber-300 p-2 w-fit "
+                className=" p-2 w-fit "
               >
                 Christmas
               </button>
@@ -86,7 +114,7 @@ function App() {
         </div>
 
         <div className="text-white font-bold text-2xl text-center flex justify-center">
-          <p className="w-2/3">{joke}</p>
+          <div className="w-2/3">{joke}</div>
         </div>
       </div>
       <div className="bg-linear-to-r from-blue-400 to-blue-300 p-5 text-white flex flex-col items-center">
