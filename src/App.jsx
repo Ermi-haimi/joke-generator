@@ -130,6 +130,10 @@ function App() {
             <FaTelegramPlane className="text-white text-xl" />
           </a>
         </div>
+        <p className="text-center text-gray-500">
+          The developer does not endorse or take responsibility for any of the
+          content displayed.
+        </p>
       </div>
     </div>
   );
