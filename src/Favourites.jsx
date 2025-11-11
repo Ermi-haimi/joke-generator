@@ -6,7 +6,7 @@ function Favourites() {
   const { favourites, addFavourite } = useContext(favouriteContext);
   if (favourites.length === 0) {
     return (
-      <div className="bg-blue-400 flex flex-1 justify-center items-center text-white  text-2xl gap-8 font-bold">
+      <div className="bg-blue-400 flex flex-1 justify-center items-center text-white  text-2xl gap-8 font-bold text-center">
         YOU DON"T HAVE ANY FAVOURITE JOKES
       </div>
     );
