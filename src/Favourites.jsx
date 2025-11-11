@@ -5,7 +5,11 @@ import { FaTimesCircle } from "react-icons/fa";
 function Favourites() {
   const { favourites, addFavourite } = useContext(favouriteContext);
   if (favourites.length === 0) {
-    return <div>YOu don't Have Any FAvourites</div>;
+    return (
+      <div className="bg-blue-400 flex flex-1 justify-center items-center text-white  text-2xl gap-8 font-bold">
+        YOU DON"T HAVE ANY FAVOURITE JOKES
+      </div>
+    );
   }
   return (
     <div className="bg-blue-400 flex-1 *:text-white flex flex-col p-2 *:text-2xl gap-8 font-bold">
