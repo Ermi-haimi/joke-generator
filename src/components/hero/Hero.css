@@ -1,56 +1,106 @@
 header {
-  background-image: linear-gradient(
-    rgb(225, 133, 71) 0 200px,
-    rgb(13, 148, 99) 200px 600px
+  min-height: 90vh;
+  padding: 40px 8% 80px;
+  background: linear-gradient(
+    to bottom,
+    #e18547 0%,
+    #e18547 50%,
+    #0d9463 50%,
+    #0d9463 100%
   );
-  background-size: cover;
-  background-position: center;
-  height: 100vh;
-  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  overflow: hidden;
 }
+
 .app-name {
-  font-size: 16rem;
+  font-size: clamp(7rem, 10vw, 12rem);
+  font-weight: 900;
+  line-height: 0.8;
+  letter-spacing: -0.07em;
   color: rgb(210, 240, 255);
   text-shadow: 2px 2px 2px saddlebrown;
-  /* text-align: center; */
-  /* width: 100%; */
-  /* background-color: #fff; */
 }
 
 .motto-pic-wrapper {
-  display: flex;
+  display: grid;
+  grid-template-columns: 1.3fr 0.7fr;
+  align-items: center;
+  gap: 40px;
+  margin-top: 50px;
 }
 
 .motto-wrapper {
-  /* background-color: rgb(58, 33, 2); */
-  display: flex;
-  align-items: center;
-  flex-grow: 1;
+  max-width: 850px;
 }
 
 .motto {
-  color: white;
-  text-transform: capitalize;
-  font-size: 4rem;
+  font-size: clamp(2.5rem, 6vw, 6rem);
+  line-height: 0.95;
+  letter-spacing: -0.045em;
+  font-weight: 800;
+  color: #171717;
 }
+
 .motto span {
-  white-space: nowrap;
+  display: inline-block;
+  color: white;
+  transform: rotate(-2deg);
+  text-decoration: underline;
+  text-decoration-thickness: 5px;
+  text-underline-offset: 7px;
 }
 
 .hero-picture-wrapper {
-  /* background-color: blueviolet; */
-  flex-grow: 2;
-  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-img {
+.hero-picture-wrapper img {
+  width: min(100%, 400px);
   display: block;
-  width: 100%;
+  transform: rotate(6deg);
+  filter: drop-shadow(15px 20px 0 rgba(0, 0, 0, 0.15));
+  transition: transform 0.3s ease;
+}
+
+.hero-picture-wrapper img:hover {
+  transform: rotate(-4deg) scale(1.05);
 }
 
 .random-joke {
+  max-width: 750px;
+  margin-top: 60px;
+  padding: 25px 30px;
+  background: rgba(255, 255, 255, 0.9);
+  box-shadow: 8px 8px 0 #171717;
 }
+
 .random-joke p {
-  font-size: 2rem;
-  width: 80%;
+  margin: 0;
+  font-size: 1.3rem;
+  line-height: 1.6;
+  font-weight: 600;
+  color: #171717;
+}
+
+@media (max-width: 800px) {
+  header {
+    padding: 40px 6% 70px;
+  }
+  .motto-pic-wrapper {
+    grid-template-columns: 1fr;
+    margin-top: 60px;
+  }
+  .hero-picture-wrapper {
+    order: -1;
+  }
+  .hero-picture-wrapper img {
+    width: min(70%, 300px);
+  }
+  .random-joke {
+    margin-top: 50px;
+  }
 }
