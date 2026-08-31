@@ -1,0 +1,36 @@
+nav {
+  height: 40px;
+  position: absolute;
+  top: 0;
+  z-index: 1000;
+  width: 100%;
+  display: flex;
+  padding: 1em 0 0 0;
+  justify-content: center;
+}
+
+.links-wrapper {
+  width: min(100%, 570px);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1em;
+}
+
+.links-wrapper a {
+  text-decoration: none;
+  color: black;
+  background-color: #f3f8fc;
+  padding: 10px;
+  box-shadow: 5px 5px #171717;
+}
+
+.links-wrapper a:visited {
+  color: black;
+}
+.links-wrapper a:hover {
+  box-shadow: 5px 5px #4f4848;
+}
+.links-wrapper a:active {
+  box-shadow: 3px 3px #4f4848;
+}
