@@ -1,11 +1,12 @@
+import { NavLink } from "react-router";
 import "./NavBar.css";
 export default function NavBar() {
   return (
     <nav>
       <div className="links-wrapper">
-        <a href="">Home</a>
-        <a href="">Discover</a>
-        <a href="">About Me</a>
+        <NavLink to="/">Home</NavLink>
+        <NavLink to="/discover">Discover</NavLink>
+        <NavLink to="/about">About Me</NavLink>
       </div>
     </nav>
   );

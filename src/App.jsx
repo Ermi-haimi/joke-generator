@@ -1,14 +1,17 @@
 import { useState } from "react";
 import MainPage from "./MainPage";
-import Favourites from "./Favourites";
-import { favouriteContext } from "./FavContext";
+import FavoritePage from "./pages/favoritePage/FavoritePage";
+import { FavouriteContext } from "./context/FavContext";
 import { BrowserRouter, Route, Routes } from "react-router";
-import Footer from "./Footer";
-import Header from "./Header";
+import Footer from "./components/footer/Footer";
+import HomePage from "./pages/homePage/HomePage";
+import NavBar from "./components/navBar/NavBar";
+import DiscoverPage from "./pages/discoverPage/DiscoverPage";
+import AboutPage from "./pages/aboutPage/AboutPage";
 
 function App() {
   const [favourites, setFavourites] = useState(
-    JSON.parse(localStorage.getItem("favs")) || []
+    JSON.parse(localStorage.getItem("favs")) || [],
   );
 
   function addFavourite(jok) {
@@ -24,18 +27,20 @@ function App() {
   }
 
   return (
-    <div className="flex flex-col h-screen">
+    <div>
       <BrowserRouter>
-        <favouriteContext.Provider
+        <FavouriteContext.Provider
           value={{ favourites, setFavourites, addFavourite }}
         >
-          <Header />
+          <NavBar />
           <Routes>
-            <Route path="/" element={<MainPage />} />
-            <Route path="favourites" element={<Favourites />} />
+            <Route path="/" element={<HomePage />} />
+            <Route path="/discover" element={<DiscoverPage />} />
+            <Route path="/about" element={<AboutPage />} />
+            <Route path="favourites" element={<FavoritePage />} />
           </Routes>
           <Footer />
-        </favouriteContext.Provider>
+        </FavouriteContext.Provider>
       </BrowserRouter>
     </div>
   );
