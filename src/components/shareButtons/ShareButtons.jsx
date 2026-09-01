@@ -25,17 +25,17 @@ function ShareButtons({ joke }) {
   };
 
   return (
-    <div className="flex flex-col">
+    <div className="">
       <button onClick={share}> Share</button>
-      <div className="flex gap-2">
+      <div className="">
         <a href={shareLinks.whatsapp} target="_blank" rel="noopener noreferrer">
           <button>
-            <FaWhatsapp className="text-green-400" />
+            <FaWhatsapp className="" />
           </button>
         </a>
         <a href={shareLinks.telegram} target="_blank" rel="noopener noreferrer">
           <button>
-            <FaTelegramPlane className="text-white" />
+            <FaTelegramPlane className="" />
           </button>
         </a>
       </div>
