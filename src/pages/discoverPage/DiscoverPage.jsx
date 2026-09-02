@@ -3,14 +3,15 @@ import { fetchJoke } from "../../services/JokeApi";
 import JokeCard from "../../components/jokeCard/JokeCard";
 import "./DiscoverPage.css";
 
-const categories = ["Programming", "Dark", "Pun", "Spooky", "Christmas"];
+const categories = ["Any", "Programming", "Dark", "Pun", "Spooky", "Christmas"];
 
 export default function DiscoverPage() {
   const [joke, setJoke] = useState("");
   const [previousJokes, setPreviousJokes] = useState([]);
   const [index, setIndex] = useState(0);
+  const [jokeCategory, setJokeCategory] = useState("Any");
 
-  async function handleFetchJoke(category = "Any") {
+  async function handleFetchJoke(category) {
     try {
       const newJoke = await fetchJoke(category);
 
@@ -27,7 +28,7 @@ export default function DiscoverPage() {
   }
 
   useEffect(() => {
-    handleFetchJoke();
+    handleFetchJoke(jokeCategory);
   }, []);
 
   function prevJoke() {
@@ -47,33 +48,52 @@ export default function DiscoverPage() {
 
   return (
     <main className="discover-page-wrapper">
+      <div className="discover-app-name">
+        <h1>Smile</h1>
+      </div>
       <div className="discover-page-inner-wrapper">
-        <div className="">
-          <div className="">
+        <div className="joke-section">
+          <JokeCard joke={joke} />
+        </div>
+
+        <div className="joke-controls">
+          <div className="joke-navigation">
             <button
-              className=""
+              className="previous-joke-button"
               onClick={() => {
                 prevJoke();
               }}
             >
               Previous Joke
             </button>
-            <button onClick={() => handleFetchJoke()} className="">
-              Generate a new joke
+            <button
+              onClick={() => handleFetchJoke(jokeCategory)}
+              className="generate-joke-button"
+            >
+              Get A New Joke
             </button>
           </div>
-          <div className="categories">
-            <p>A joke by category</p>
-
+          <div className="category-buttons">
             {categories.map((category) => (
-              <button key={category} onClick={() => handleFetchJoke(category)}>
+              <button
+                key={category}
+                className={
+                  jokeCategory === category
+                    ? "category-button active"
+                    : "category-button"
+                }
+                onClick={() => {
+                  setJokeCategory(category);
+                  handleFetchJoke(category);
+                }}
+              >
                 {category}
               </button>
             ))}
           </div>
         </div>
-        <JokeCard joke={joke} />
       </div>
+      {/* </div> */}
     </main>
   );
 }
