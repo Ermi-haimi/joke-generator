@@ -1,10 +1,11 @@
-import { FaCheckCircle, FaTimesCircle } from "react-icons/fa";
-import { useContext } from "react";
-import { FavouriteContext } from "../../context/FavContext";
+import { FaCheckCircle, FaHeart, FaTimesCircle } from "react-icons/fa";
+import { useContext, useEffect } from "react";
+import { FavoriteContext } from "../../context/FavContext";
 import ShareButtons from "../ShareButtons/ShareButtons";
+import "./JokeCard.css";
 
 export default function JokeCard({ joke }) {
-  const { favourites, addFavourite } = useContext(FavouriteContext);
+  const { favorites, addFavorite } = useContext(FavoriteContext);
 
   const isMessage =
     joke === "" ||
@@ -12,14 +13,17 @@ export default function JokeCard({ joke }) {
     joke === "you haven't generate any joke" ||
     joke === "You have seen all the jokes you generated, generate a new joke!";
 
+  useEffect(() => {
+    localStorage.setItem("favs", JSON.stringify(favorites));
+  }, [favorites]);
   return (
     <div className="joke-display">
       <div className="joke-text">
         {joke}
 
         {!isMessage && (
-          <button onClick={() => addFavourite(joke)}>
-            {favourites.includes(joke) ? <FaTimesCircle /> : <FaCheckCircle />}
+          <button onClick={() => addFavorite(joke)}>
+            {favorites.includes(joke) ? <FaTimesCircle /> : <FaHeart />}
           </button>
         )}
       </div>

@@ -1,2 +1,2 @@
 import { createContext } from "react";
-export const FavouriteContext = createContext();
+export const FavoriteContext = createContext();
