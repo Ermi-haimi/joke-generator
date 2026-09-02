@@ -1,0 +1,120 @@
+.joke-display {
+  width: min(900px, 100%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 30px;
+  margin: 0 auto;
+}
+
+.joke-texts {
+  position: relative;
+  width: 100%;
+  min-height: 320px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 70px 80px;
+  background: #fff;
+  border: 3px solid #171717;
+  box-shadow: 10px 10px 0 #171717;
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease;
+}
+
+.joke-texts:hover {
+  box-shadow: 14px 14px 0 #171717;
+}
+
+.joke-texts p {
+  max-width: 750px;
+  font-size: clamp(1.6rem, 3.5vw, 2.8rem);
+  line-height: 1.25;
+  font-weight: 800;
+  text-align: center;
+  color: #171717;
+}
+
+.favorite-button {
+  position: absolute;
+  top: 25px;
+  right: 28px;
+  width: 60px;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 3px solid #171717;
+  font-size: 1.35rem;
+  cursor: pointer;
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.favorite-button:not(.remove-favorite) {
+  background: #e6881d;
+  color: #171717;
+  box-shadow: 5px 5px 0 #171717;
+}
+
+.favorite-button:not(.remove-favorite):hover {
+  transform: scale(1.03) rotate(-8deg);
+  box-shadow: 7px 7px 0 #302f2f;
+}
+
+.favorite-button.remove-favorite {
+  background: #415a77;
+  color: white;
+  box-shadow: 5px 5px 0 #171717;
+}
+
+.favorite-button.remove-favorite:hover {
+  transform: scale(1.03) rotate(8deg);
+  box-shadow: 7px 7px 0 #302f2f;
+}
+
+.joke-display > :last-child {
+  width: 100%;
+}
+
+@media (max-width: 700px) {
+  .joke-display {
+    gap: 25px;
+  }
+  .joke-texts {
+    min-height: 280px;
+    padding: 70px 30px 50px;
+  }
+  .joke-texts:hover {
+    box-shadow: 12px 12px 0 #171717;
+  }
+  .joke-texts p {
+    font-size: clamp(1.4rem, 6vw, 2rem);
+  }
+  .favorite-button {
+    width: 52px;
+    height: 52px;
+    top: 18px;
+    right: 22px;
+    font-size: 1.15rem;
+  }
+}
+
+@media (max-width: 450px) {
+  .joke-texts {
+    min-height: 250px;
+    box-shadow: 8px 8px 0 #171717;
+  }
+  .joke-texts p {
+    font-size: 1.35rem;
+  }
+  .favorite-button {
+    width: 48px;
+    height: 48px;
+    top: 15px;
+    right: 18px;
+    border-width: 3px;
+  }
+}

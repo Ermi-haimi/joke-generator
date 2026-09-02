@@ -18,11 +18,16 @@ export default function JokeCard({ joke }) {
   }, [favorites]);
   return (
     <div className="joke-display">
-      <div className="joke-text">
-        {joke}
+      <div className="joke-texts">
+        <p>{joke}</p>
 
         {!isMessage && (
-          <button onClick={() => addFavorite(joke)}>
+          <button
+            className={`favorite-button ${
+              favorites.includes(joke) ? "remove-favorite" : ""
+            }`}
+            onClick={() => addFavorite(joke)}
+          >
             {favorites.includes(joke) ? <FaTimesCircle /> : <FaHeart />}
           </button>
         )}
