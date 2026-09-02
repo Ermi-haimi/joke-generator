@@ -1,7 +1,7 @@
 import { FaCheckCircle, FaHeart, FaTimesCircle } from "react-icons/fa";
 import { useContext, useEffect } from "react";
 import { FavoriteContext } from "../../context/FavContext";
-import ShareButtons from "../ShareButtons/ShareButtons";
+import ShareButtons from "../shareButtons/ShareButtons";
 import "./JokeCard.css";
 
 export default function JokeCard({ joke }) {
