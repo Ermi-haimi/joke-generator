@@ -1,0 +1,103 @@
+.share-buttons {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 18px;
+}
+
+.share-main-button {
+  min-width: 130px;
+  padding: 14px 28px;
+  border: none;
+  border-radius: 16px;
+  background: #ffd43b;
+  color: #171717;
+  font-size: 1rem;
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  cursor: pointer;
+  box-shadow: 6px 6px 0 #171717;
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.share-main-button:hover {
+  transform: translate(-2px, -2px);
+  box-shadow: 8px 8px 0 #171717;
+}
+
+.share-main-button:active {
+  transform: translate(3px, 3px);
+  box-shadow: 2px 2px 0 #171717;
+}
+.social-share-buttons {
+  display: flex;
+  gap: 14px;
+}
+
+.social-share-link {
+  text-decoration: none;
+}
+
+.social-share-link button {
+  width: 52px;
+  height: 52px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  border-radius: 14px;
+  font-size: 1.7rem;
+  cursor: pointer;
+  box-shadow: 5px 5px 0 #171717;
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.whatsapp-button {
+  background: #25d366;
+  color: #ffffff;
+}
+
+.whatsapp-button:hover {
+  transform: rotate(-5deg) scale(1.05);
+  box-shadow: 7px 7px 0 #171717;
+}
+
+.telegram-button {
+  background: #38bdf8;
+  color: #ffffff;
+}
+
+.telegram-button:hover {
+  transform: rotate(5deg) scale(1.05);
+  box-shadow: 7px 7px 0 #171717;
+}
+
+.social-share-link button:active {
+  transform: scale(0.9);
+  box-shadow: 3px 3px 0 #171717;
+}
+
+@media (max-width: 500px) {
+  .share-buttons {
+    gap: 14px;
+  }
+  .share-main-button {
+    min-width: 110px;
+    padding: 12px 20px;
+    font-size: 0.9rem;
+  }
+  .social-share-buttons {
+    gap: 10px;
+  }
+  .social-share-link button {
+    width: 48px;
+    height: 48px;
+    font-size: 1.2rem;
+  }
+}

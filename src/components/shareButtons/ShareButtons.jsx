@@ -1,7 +1,8 @@
 import React from "react";
 import { FaTelegramPlane, FaWhatsapp } from "react-icons/fa";
+import "./ShareButtons.css";
 
-function ShareButtons({ joke }) {
+export default function ShareButtons({ joke }) {
   const encodedJoke = encodeURIComponent(joke);
   const currentUrl = encodeURIComponent(window.location.href);
 
@@ -25,22 +26,33 @@ function ShareButtons({ joke }) {
   };
 
   return (
-    <div className="">
-      <button onClick={share}> Share</button>
-      <div className="">
-        <a href={shareLinks.whatsapp} target="_blank" rel="noopener noreferrer">
-          <button>
-            <FaWhatsapp className="" />
+    <div className="share-buttons">
+      <button className="share-main-button" onClick={share}>
+        {" "}
+        Share
+      </button>
+      <div className="social-share-buttons">
+        <a
+          href={shareLinks.whatsapp}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="social-share-link"
+        >
+          <button className="whatsapp-button">
+            <FaWhatsapp />
           </button>
         </a>
-        <a href={shareLinks.telegram} target="_blank" rel="noopener noreferrer">
-          <button>
-            <FaTelegramPlane className="" />
+        <a
+          href={shareLinks.telegram}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="social-share-link"
+        >
+          <button className="telegram-button">
+            <FaTelegramPlane />
           </button>
         </a>
       </div>
     </div>
   );
 }
-
-export default ShareButtons;
