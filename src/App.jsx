@@ -1,5 +1,4 @@
 import { useState } from "react";
-// import MainPage from "./MainPage";
 import FavoritePage from "./pages/favoritePage/FavoritePage";
 import { FavoriteContext } from "./context/FavContext";
 import { BrowserRouter, Route, Routes } from "react-router";
