@@ -1,8 +1,7 @@
 import { useState, useEffect } from "react";
 import { fetchJoke } from "../../services/JokeApi";
-// import { FavouriteContext } from "../../context/FavContext";
-// import ShareButtons from "../../components/shareButtons/ShareButtons";
 import JokeCard from "../../components/jokeCard/JokeCard";
+import "./DiscoverPage.css";
 
 const categories = ["Programming", "Dark", "Pun", "Spooky", "Christmas"];
 
@@ -47,8 +46,8 @@ export default function DiscoverPage() {
   }
 
   return (
-    <div className="">
-      <div className="">
+    <main className="discover-page-wrapper">
+      <div className="discover-page-inner-wrapper">
         <div className="">
           <div className="">
             <button
@@ -75,6 +74,6 @@ export default function DiscoverPage() {
         </div>
         <JokeCard joke={joke} />
       </div>
-    </div>
+    </main>
   );
 }

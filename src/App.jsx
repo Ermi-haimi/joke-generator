@@ -1,7 +1,7 @@
 import { useState } from "react";
-import MainPage from "./MainPage";
+// import MainPage from "./MainPage";
 import FavoritePage from "./pages/favoritePage/FavoritePage";
-import { FavouriteContext } from "./context/FavContext";
+import { FavoriteContext } from "./context/FavContext";
 import { BrowserRouter, Route, Routes } from "react-router";
 import Footer from "./components/footer/Footer";
 import HomePage from "./pages/homePage/HomePage";
@@ -10,12 +10,12 @@ import DiscoverPage from "./pages/discoverPage/DiscoverPage";
 import AboutPage from "./pages/aboutPage/AboutPage";
 
 function App() {
-  const [favourites, setFavourites] = useState(
+  const [favorites, setFavorites] = useState(
     JSON.parse(localStorage.getItem("favs")) || [],
   );
 
-  function addFavourite(jok) {
-    setFavourites((prevFavs) => {
+  function addFavorite(jok) {
+    setFavorites((prevFavs) => {
       if (prevFavs.includes(jok)) {
         console.log("removed");
         return prevFavs.filter((item) => item !== jok);
@@ -29,8 +29,8 @@ function App() {
   return (
     <div>
       <BrowserRouter>
-        <FavouriteContext.Provider
-          value={{ favourites, setFavourites, addFavourite }}
+        <FavoriteContext.Provider
+          value={{ favorites, setFavorites, addFavorite }}
         >
           <NavBar />
           <Routes>
@@ -40,7 +40,7 @@ function App() {
             <Route path="favourites" element={<FavoritePage />} />
           </Routes>
           <Footer />
-        </FavouriteContext.Provider>
+        </FavoriteContext.Provider>
       </BrowserRouter>
     </div>
   );
