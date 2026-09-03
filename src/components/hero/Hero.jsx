@@ -1,8 +1,10 @@
 import "./Hero.css";
 import smiley from "../../assets/images/71XIDaWorpL.png";
+import useFetchJoke from "../../hooks/useFetchJoke";
 export default function Hero() {
+  const randomJoke = useFetchJoke();
   return (
-    <header>
+    <section className="hero-wrapper">
       <h1 className="app-name">Smile</h1>
       <div className="motto-pic-wrapper">
         <div className="motto-wrapper">
@@ -18,11 +20,8 @@ export default function Hero() {
       </div>
       <h2></h2>
       <div className="random-joke">
-        <p>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatum
-          consectetur iusto perferendis
-        </p>
+        <p>{randomJoke}</p>
       </div>
-    </header>
+    </section>
   );
 }

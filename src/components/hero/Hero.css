@@ -1,6 +1,6 @@
-header {
+.hero-wrapper {
   min-height: 90vh;
-  padding: 40px 8% 80px;
+  padding: 70px 8% 80px;
   background: linear-gradient(
     to bottom,
     #e18547 0%,
@@ -87,8 +87,8 @@ header {
 }
 
 @media (max-width: 800px) {
-  header {
-    padding: 40px 6% 70px;
+  .hero-wrapper {
+    padding: 90px 6% 70px;
   }
   .motto-pic-wrapper {
     grid-template-columns: 1fr;
