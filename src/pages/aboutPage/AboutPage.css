@@ -1,0 +1,248 @@
+/* =========================
+   PAGE
+   ========================= */
+
+.about-page {
+  min-height: 100vh;
+  background: #0d9463;
+  color: #171717;
+  overflow: hidden;
+}
+
+.about-section,
+.tech-section,
+.about-ending {
+  padding: 100px 7%;
+}
+
+.about-card {
+  max-width: 1000px;
+  margin: auto;
+  display: grid;
+  grid-template-columns: 130px 1fr;
+  gap: 45px;
+  padding: 55px;
+  background: white;
+  border: 5px solid #171717;
+  /* border-radius: 35px; */
+  box-shadow: 10px 10px 0 #171717;
+  transform: rotate(-1deg);
+}
+
+.about-card-icon {
+  width: 100px;
+  height: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #e18547;
+  border: 2px solid #171717;
+  border-radius: 25px;
+  font-size: 3rem;
+  box-shadow: 4px 4px 0 #171717;
+  color: white;
+  transform: rotate(5deg);
+}
+
+.about-card h3 {
+  margin: 0 0 25px;
+  font-size: clamp(2rem, 4vw, 3.5rem);
+  line-height: 1;
+  font-weight: 1000;
+  letter-spacing: -0.04em;
+}
+
+.about-card h3 span {
+  color: #0d9463;
+}
+
+.about-card p:not(.section-label) {
+  max-width: 700px;
+  margin: 15px 0;
+  font-size: 1.05rem;
+  line-height: 1.7;
+  font-weight: 500;
+}
+
+.section-heading {
+  max-width: 800px;
+  margin: 0 auto 55px;
+  text-align: center;
+}
+
+.section-heading h2 {
+  font-size: clamp(2.7rem, 6vw, 5rem);
+  line-height: 0.95;
+  color: white;
+  font-weight: 1000;
+  letter-spacing: -0.05em;
+}
+.section-label {
+  color: white;
+}
+
+.tech-card {
+  max-width: 900px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  border: 2px solid #171717;
+  overflow: hidden;
+  box-shadow: 10px 12px 0 #171717;
+}
+
+.tech-item {
+  min-height: 180px;
+  padding: 30px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  background: white;
+  border-right: 4px solid #171717;
+}
+
+.tech-item:last-child {
+  border-right: none;
+}
+
+.tech-item svg {
+  margin-bottom: 15px;
+  font-size: 3rem;
+  color: #e18547;
+}
+
+.tech-item h3 {
+  margin: 0 0 5px;
+  font-size: 1.3rem;
+  font-weight: 1000;
+}
+
+.tech-item p {
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+
+.about-ending {
+  background: rgb(225, 133, 71);
+  border-top: 5px solid #171717;
+}
+
+.ending-card {
+  max-width: 750px;
+  margin: auto;
+  padding: 65px 40px;
+  text-align: center;
+  background: white;
+  border: 5px solid #171717;
+  box-shadow: 10px 10px 0 #171717;
+}
+
+.ending-icon {
+  font-size: 4rem;
+  margin-bottom: 20px;
+  color: #0d9463;
+  filter: drop-shadow(4px 4px 0 #171717);
+}
+
+.ending-card h2 {
+  margin: 0;
+  font-size: clamp(3rem, 7vw, 5rem);
+  line-height: 0.9;
+  font-weight: 1000;
+  letter-spacing: -0.06em;
+}
+
+.ending-card p {
+  max-width: 500px;
+  margin: 30px auto;
+  font-size: 1.05rem;
+  line-height: 1.6;
+  font-weight: 600;
+}
+
+.github-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 15px 25px;
+  background: #171717;
+  color: white;
+  border: 4px solid #171717;
+  border-radius: 14px;
+  text-decoration: none;
+  font-size: 1rem;
+  font-weight: 900;
+  box-shadow: 6px 6px 0 rgb(13, 148, 99);
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.github-button:hover {
+  transform: translate(-2px, -2px);
+  box-shadow: 8px 8px 0 rgb(13, 148, 99);
+}
+
+.github-button:active {
+  transform: translate(3px, 3px);
+  box-shadow: 2px 2px 0 rgb(13, 148, 99);
+}
+
+@media (max-width: 800px) {
+  .about-card {
+    grid-template-columns: 1fr;
+    gap: 30px;
+    padding: 40px;
+  }
+
+  .about-card-icon {
+    width: 80px;
+    height: 80px;
+    font-size: 2.3rem;
+  }
+  .tech-card {
+    grid-template-columns: 1fr;
+  }
+  .tech-item {
+    border-right: none;
+    border-bottom: 4px solid #171717;
+  }
+  .tech-item:last-child {
+    border-bottom: none;
+  }
+}
+
+@media (max-width: 500px) {
+  .about-section,
+  .tech-section,
+  .about-ending {
+    padding: 70px 6%;
+  }
+  .about-card {
+    padding: 30px 25px;
+    border-width: 4px;
+  }
+  .about-card h3 {
+    font-size: 2.2rem;
+  }
+  .about-card p:not(.section-label) {
+    font-size: 0.95rem;
+  }
+  .section-heading {
+    margin-bottom: 40px;
+  }
+  .section-heading h2 {
+    font-size: 2.7rem;
+  }
+  .ending-card {
+    padding: 50px 25px;
+    border-width: 4px;
+    border-radius: 25px;
+  }
+
+  .ending-card h2 {
+    font-size: 3rem;
+  }
+}
