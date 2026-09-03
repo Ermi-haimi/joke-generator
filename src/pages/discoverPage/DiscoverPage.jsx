@@ -10,9 +10,11 @@ export default function DiscoverPage() {
   const [previousJokes, setPreviousJokes] = useState([]);
   const [index, setIndex] = useState(0);
   const [jokeCategory, setJokeCategory] = useState("Any");
+  const [loading, setLoading] = useState(true);
 
   async function handleFetchJoke(category) {
     try {
+      setLoading(true);
       const newJoke = await fetchJoke(category);
 
       setJoke(newJoke);
@@ -24,6 +26,8 @@ export default function DiscoverPage() {
     } catch (error) {
       console.error("Error fetching joke:", error);
       setJoke("Oops! Failed to fetch a joke. Try again!");
+    } finally {
+      setLoading(false);
     }
   }
 
@@ -53,7 +57,13 @@ export default function DiscoverPage() {
       </div>
       <div className="discover-page-inner-wrapper">
         <div className="joke-section">
-          <JokeCard joke={joke} />
+          {loading ? (
+            <div className="loading">
+              <p>Loading...</p>
+            </div>
+          ) : (
+            <JokeCard joke={joke} />
+          )}
         </div>
 
         <div className="joke-controls">
@@ -93,7 +103,6 @@ export default function DiscoverPage() {
           </div>
         </div>
       </div>
-      {/* </div> */}
     </main>
   );
 }
