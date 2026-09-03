@@ -64,6 +64,12 @@
   font-weight: 500;
 }
 
+.tech-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
 .section-heading {
   max-width: 800px;
   margin: 0 auto 55px;
@@ -83,6 +89,7 @@
 
 .tech-card {
   max-width: 900px;
+  margin: auto;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   border: 2px solid #171717;
@@ -201,6 +208,10 @@
     width: 80px;
     height: 80px;
     font-size: 2.3rem;
+  }
+  .tech-section {
+    display: block;
+    align-items: stretchs;
   }
   .tech-card {
     grid-template-columns: 1fr;

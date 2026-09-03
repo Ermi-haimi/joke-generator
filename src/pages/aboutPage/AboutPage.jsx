@@ -19,7 +19,7 @@ export default function AboutPage() {
             </h3>
 
             <p>
-              My name is Ermias Haimanot currently a software engineering
+              My name is Ermias Haimanot, currently a software engineering
               student at AAU who enjoys creating websites, experimenting with
               new technologies, and turning ideas into something people can
               actually use.
