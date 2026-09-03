@@ -36,7 +36,7 @@ function App() {
             <Route path="/" element={<HomePage />} />
             <Route path="/discover" element={<DiscoverPage />} />
             <Route path="/about" element={<AboutPage />} />
-            <Route path="favourites" element={<FavoritePage />} />
+            <Route path="favorites" element={<FavoritePage />} />
           </Routes>
           <Footer />
         </FavoriteContext.Provider>

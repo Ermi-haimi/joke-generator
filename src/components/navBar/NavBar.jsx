@@ -6,7 +6,8 @@ export default function NavBar() {
       <div className="links-wrapper">
         <NavLink to="/">Home</NavLink>
         <NavLink to="/discover">Discover</NavLink>
-        <NavLink to="/about">About Me</NavLink>
+        <NavLink to="/favorites">Favorites</NavLink>
+        <NavLink to="/about">About</NavLink>
       </div>
     </nav>
   );

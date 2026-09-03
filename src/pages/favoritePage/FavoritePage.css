@@ -1,0 +1,90 @@
+.favorite-page {
+  min-height: 100vh;
+  padding: 70px 30px;
+  background-color: #000;
+  background: linear-gradient(#e18547 0%, #e18547 7%, #0d9463 7%, #0d9463 100%);
+}
+
+.favorite-page-header {
+  max-width: 700px;
+  margin: 0 auto 50px;
+  text-align: center;
+  color: white;
+  text-shadow: 2px 2px #171717;
+}
+
+.favorite-page-header h1 {
+  margin: 20px 0 12px;
+  font-size: 36px;
+  line-height: 1.2;
+}
+
+.favorite-page-header p {
+  margin: 0;
+  font-size: 16px;
+  color: #262626;
+  text-shadow: none;
+}
+
+.favorites-grid {
+  width: 100%;
+  max-width: 1100px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  grid-template-columns: 1fr;
+  gap: 50px;
+  align-items: start;
+}
+
+.empty-favorites {
+  width: min(100%, 550px);
+  margin: 70px auto 0;
+  padding: 45px 30px;
+  text-align: center;
+  background: white;
+  border-radius: 20px;
+}
+
+.empty-favorites-icon {
+  font-size: 45px;
+  margin-bottom: 15px;
+}
+
+.empty-favorites h2 {
+  margin: 0 0 10px;
+  font-size: 25px;
+}
+
+.empty-favorites p {
+  margin: 0;
+  line-height: 1.6;
+  color: #666;
+}
+
+.favorite-page .joke-texts {
+  min-height: 220px;
+  padding: 70px 90px;
+}
+
+.favorite-page .joke-texts p {
+  font-size: clamp(1.4rem, 6vw, 1.2rem);
+}
+
+@media (max-width: 600px) {
+  .favorite-page {
+    padding: 50px 20px;
+  }
+
+  .favorite-page-header {
+    margin-bottom: 35px;
+  }
+
+  .favorite-page-header h1 {
+    font-size: 30px;
+  }
+
+  .favorites-grid {
+    gap: 20px;
+  }
+}
