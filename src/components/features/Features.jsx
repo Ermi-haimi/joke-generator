@@ -9,8 +9,11 @@ export default function Features() {
         </p>
       </div>
       <div className="copy-feature-wrapper">
-        <div>COPY</div>
-        <p>copy a joke easily and paste it anywhere</p>
+        <div>CATEGORIES</div>
+        <p>
+          Explore joke of different categories, such as dark, puns, programming
+          and others
+        </p>
       </div>
       <div className="share-feature-wrapper">
         <div>SHARE</div>
